@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>MAHAMAYA JEWELLERY - GST Invoice</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2, h4 { margin: 0; }
+    hr { border: 1px solid #000; margin: 10px 0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #333; padding: 6px; text-align: center; }
+    input, select { width: 100%; box-sizing: border-box; }
+    .header { display: flex; justify-content: space-between; align-items: center; }
+    .summary { margin-top: 20px; }
+    @media print {
+      @page { size: A4; margin: 20mm; }
+      body { width: 100%; }
+    }
+    .print-btn { margin-top: 20px; text-align: right; }
+    .print-btn button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h2>MAHAMAYA JEWELLERY</h2>
+  <h4>महामाया मंदिर वार्ड 05 देवकर</h4>
+  <hr>
+  <div class="header">
+    <div>
+      <label for="date">Date: </label>
+      <input type="date" id="date">
+    </div>
+  </div>
+
+  <table id="invoiceTable">
+    <thead>
+      <tr>
+        <th>Item Type</th>
+        <th>Item Name</th>
+        <th>Weight (gm)</th>
+        <th>Weight (mg)</th>
+        <th>Rate/Gram ₹</th>
+        <th>Gold/Silver Value ₹</th>
+        <th>Making Charges ₹</th>
+        <th>Total ₹</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 7 Rows for Entry -->
+      
+      <tr>
+        <td><select class="type"><option>Gold</option><option>Silver</option></select></td>
+        <td><input type="text" class="item"></td>
+        <td><input type="number" class="gm" value="0"></td>
+        <td><input type="number" class="mg" value="0"></td>
+        <td><input type="number" class="rate" value="0"></td>
+        <td class="value">0.00</td>
+        <td><input type="number" class="making" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+      
+      <tr>
+        <td><select class="type"><option>Gold</option><option>Silver</option></select></td>
+        <td><input type="text" class="item"></td>
+        <td><input type="number" class="gm" value="0"></td>
+        <td><input type="number" class="mg" value="0"></td>
+        <td><input type="number" class="rate" value="0"></td>
+        <td class="value">0.00</td>
+        <td><input type="number" class="making" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+      
+      <tr>
+        <td><select class="type"><option>Gold</option><option>Silver</option></select></td>
+        <td><input type="text" class="item"></td>
+        <td><input type="number" class="gm" value="0"></td>
+        <td><input type="number" class="mg" value="0"></td>
+        <td><input type="number" class="rate" value="0"></td>
+        <td class="value">0.00</td>
+        <td><input type="number" class="making" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+      
+      <tr>
+        <td><select class="type"><option>Gold</option><option>Silver</option></select></td>
+        <td><input type="text" class="item"></td>
+        <td><input type="number" class="gm" value="0"></td>
+        <td><input type="number" class="mg" value="0"></td>
+        <td><input type="number" class="rate" value="0"></td>
+        <td class="value">0.00</td>
+        <td><input type="number" class="making" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+      
+      <tr>
+        <td><select class="type"><option>Gold</option><option>Silver</option></select></td>
+        <td><input type="text" class="item"></td>
+        <td><input type="number" class="gm" value="0"></td>
+        <td><input type="number" class="mg" value="0"></td>
+        <td><input type="number" class="rate" value="0"></td>
+        <td class="value">0.00</td>
+        <td><input type="number" class="making" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+      
+      <tr>
+        <td><select class="type"><option>Gold</option><option>Silver</option></select></td>
+        <td><input type="text" class="item"></td>
+        <td><input type="number" class="gm" value="0"></td>
+        <td><input type="number" class="mg" value="0"></td>
+        <td><input type="number" class="rate" value="0"></td>
+        <td class="value">0.00</td>
+        <td><input type="number" class="making" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+      
+      <tr>
+        <td><select class="type"><option>Gold</option><option>Silver</option></select></td>
+        <td><input type="text" class="item"></td>
+        <td><input type="number" class="gm" value="0"></td>
+        <td><input type="number" class="mg" value="0"></td>
+        <td><input type="number" class="rate" value="0"></td>
+        <td class="value">0.00</td>
+        <td><input type="number" class="making" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <div class="summary">
+    <p><strong>Gold/Silver Total: ₹<span id="goldTotal">0.00</span></strong></p>
+    <p><strong>GST @3% on Gold/Silver: ₹<span id="gstGold">0.00</span></strong></p>
+    <p><strong>Making Charges Total: ₹<span id="makingTotal">0.00</span></strong></p>
+    <p><strong>GST @5% on Making Charges: ₹<span id="gstMaking">0.00</span></strong></p>
+    <hr>
+    <h3>Grand Total: ₹<span id="grandTotal">0.00</span></h3>
+  </div>
+
+  
+    <div class="recalculate-btn" style="text-align:right; margin-top: 10px;">
+      <button onclick="calculate()">🔁 Recalculate</button>
+    </div>
+    <div class="print-btn">
+    <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <script>
+    function calculate() {
+      let rows = document.querySelectorAll('#invoiceTable tbody tr');
+      let goldTotal = 0, makingTotal = 0;
+
+      rows.forEach(row => {
+        let gm = parseFloat(row.querySelector('.gm').value) || 0;
+        let mg = parseFloat(row.querySelector('.mg').value) || 0;
+        let rate = parseFloat(row.querySelector('.rate').value) || 0;
+        let making = parseFloat(row.querySelector('.making').value) || 0;
+
+        let weight = gm + (mg / 1000);
+        let value = weight * rate;
+        let total = value + making;
+
+        row.querySelector('.value').innerText = value.toFixed(2);
+        row.querySelector('.total').innerText = total.toFixed(2);
+
+        goldTotal += value;
+        makingTotal += making;
+      });
+
+      let gstGold = goldTotal * 0.03;
+      let gstMaking = makingTotal * 0.05;
+      let grand = goldTotal + gstGold + makingTotal + gstMaking;
+
+      document.getElementById('goldTotal').innerText = goldTotal.toFixed(2);
+      document.getElementById('gstGold').innerText = gstGold.toFixed(2);
+      document.getElementById('makingTotal').innerText = makingTotal.toFixed(2);
+      document.getElementById('gstMaking').innerText = gstMaking.toFixed(2);
+      document.getElementById('grandTotal').innerText = grand.toFixed(2);
+    }
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+
+</body>
+</html>
