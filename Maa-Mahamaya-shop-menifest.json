@@ -1,0 +1,21 @@
+{
+  "name": "Maa Mahamaya Jewelers",
+  "short_name": "MM Jewelers",
+  "description": "Invoice Generator App",
+  "start_url": "/Maa-Mahamaya-Jewellers/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8B4513",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
